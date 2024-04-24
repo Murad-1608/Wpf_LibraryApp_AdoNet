@@ -1,6 +1,6 @@
 ﻿namespace LibraryCore.Domain.Entities
 {
-    public class Genre
+    public class Genre : IEntity
     {
         public int Id { get; set; }
         public int ModifierId { get; set; }

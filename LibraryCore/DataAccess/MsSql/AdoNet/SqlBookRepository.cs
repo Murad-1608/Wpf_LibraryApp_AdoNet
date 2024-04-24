@@ -1,12 +1,12 @@
 ﻿using LibraryCore.Domain.Abstract;
 using LibraryCore.Domain.Entities;
 
-namespace LibraryCore.DataAccess.AdoNet
+namespace LibraryCore.DataAccess.MsSql.AdoNet
 {
-    public class BookRepository : IBookRepository
+    public class SqlBookRepository : IBookRepository
     {
         private readonly string connectionString;
-        public BookRepository(string connectionString)
+        public SqlBookRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }

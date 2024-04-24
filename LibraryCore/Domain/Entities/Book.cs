@@ -1,6 +1,6 @@
 ﻿namespace LibraryCore.Domain.Entities
 {
-    public class Book
+    public class Book : IEntity
     {
         public int Id { get; set; }
         public int ModifierId { get; set; }
