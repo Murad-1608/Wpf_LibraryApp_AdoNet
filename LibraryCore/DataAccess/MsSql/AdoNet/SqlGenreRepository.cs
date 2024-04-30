@@ -69,7 +69,6 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
                 }
             }
         }
-        47:37
 
         public Genre GetById(int id)
         {
