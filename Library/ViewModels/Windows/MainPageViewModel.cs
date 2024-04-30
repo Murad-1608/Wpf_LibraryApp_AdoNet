@@ -7,10 +7,10 @@ namespace Library.ViewModels.Windows
     {
         public MainPageViewModel()
         {
-            OpenGenresCommand = new OpenGenresCommand();
+            OpenGenres = new OpenGenresCommand(this);
         }
-        public OpenGenresCommand OpenGenresCommand { get; }
+        public OpenGenresCommand OpenGenres { get; }
 
-        public Grid grdCenter { get; set; }
+        public Grid? grdCenter { get; set; }
     }
 }

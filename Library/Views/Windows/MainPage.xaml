@@ -66,7 +66,7 @@
             <ScrollViewer>
                 <Grid>
                     <StackPanel Margin="0">
-                        <Button Style="{StaticResource btnMenuBig}" Name="btnBanks" Height="55" Content="Genres" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenGenres}"/>
+                        <Button Style="{StaticResource btnMenuBig}" Name="btnGenres" Height="55" Content="Genres" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenGenres}" CommandParameter="{Binding ElementName=grdCenter}"/>
                         <Button Style="{StaticResource btnMenuBig}" Name="btnBankBranches" Height="55" Content="Books" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenBooks}"/>
                         <Button Style="{StaticResource btnMenuBig}" Name="btnResidents" Height="55" Content="Users" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenUsers}"/>
                     </StackPanel>

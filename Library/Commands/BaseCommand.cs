@@ -7,8 +7,9 @@ namespace Library.Commands
         public event EventHandler? CanExecuteChanged;
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
+
 
         public abstract void Execute(object? parameter);
     }

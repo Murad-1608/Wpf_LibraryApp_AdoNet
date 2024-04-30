@@ -1,5 +1,6 @@
 ﻿using Library.ViewModels.Windows;
 using Library.Views.Controls;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Library.Commands.Main
@@ -13,7 +14,13 @@ namespace Library.Commands.Main
         }
         public override void Execute(object? parameter)
         {
-            viewModel.grdCenter.Children.Clear();
+            Grid? grid = parameter as Grid;
+
+            viewModel.grdCenter = grid;
+
+            viewModel.grdCenter!.Children.Clear();
+
+
 
             GenresControl genresControl = new();
 
