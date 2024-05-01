@@ -1,6 +1,6 @@
 ﻿namespace Library.Models
 {
-    public class GenreModel
+    public class GenreModel : IModel
     {
         public int No { get; set; }
         public string Name { get; set; }

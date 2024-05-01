@@ -1,4 +1,6 @@
-﻿using Library.ViewModels.Controls;
+﻿using Library.Mappers;
+using Library.Models;
+using Library.ViewModels.Controls;
 using Library.ViewModels.Windows;
 using Library.Views.Controls;
 using LibraryCore.Domain.Abstract;
@@ -28,7 +30,19 @@ namespace Library.Commands.Main
             genresControl.DataContext = genreViewModel;
             var genres = unitOfWork.GenreRepository.GetAll();
 
+            var genreForUI = new List<GenreModel>();
 
+            GenreMapper mapper = new GenreMapper();
+
+            for (int i = 0; i < genres.Count; i++)
+            {
+                var genreModel = mapper.Map(genres[i]);
+                genreModel.No = (i + 1);
+
+                genreForUI.Add(genreModel);
+            }
+
+            genreViewModel.Genres = genreForUI;
 
             grid.Children.Clear();
             grid.Children.Add(genresControl);
