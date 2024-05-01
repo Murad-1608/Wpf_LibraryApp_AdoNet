@@ -2,7 +2,7 @@
 
 namespace LibraryCore.Domain.Abstract
 {
-    public interface IBookRepository : IGenericRepository<User>
+    public interface IBookRepository : IGenericRepository<Book>
     {
     }
 }

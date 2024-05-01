@@ -40,10 +40,10 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
 
         public List<Genre> GetAll()
         {
-            using (SqlConnection connection = new SqlConnection())
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string command = $"select *from Genres where isActive=1";
-
+                connection.Open();
                 using (SqlCommand cmd = new SqlCommand(command, connection))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())

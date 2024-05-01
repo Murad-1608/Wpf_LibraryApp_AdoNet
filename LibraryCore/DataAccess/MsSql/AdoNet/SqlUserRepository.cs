@@ -12,7 +12,7 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
             this.connectionString = connectionString;
         }
 
-        public void Add(User user)
+        public int Add(User item)
         {
             throw new NotImplementedException();
         }
@@ -24,56 +24,81 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
 
         public List<User> GetAll()
         {
-            using (SqlConnection connection = new(connectionString))
-            {
-                string command = "select *from Users where IsActive=true";
-
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand(command, connection))
-                {
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    List<User> users = new List<User>();
-
-                    while (reader.Read())
-                    {
-                        User user = new();
-
-                        user.Id = int.Parse(reader["Id"].ToString()!);
-                        user.Name = reader["Name"].ToString()!;
-                        user.PasswordHash = reader["PasswordHash"].ToString()!;
-                        user.CreatedAt = (DateTime)reader["CreatedAt"];
-                        user.UpdatedAt = (DateTime)reader["UpdatedAt"];
-
-                        users.Add(user);
-                    }
-
-                    return users;
-                }
-            }
+            throw new NotImplementedException();
         }
 
         public User GetById(int id)
         {
-            using (SqlConnection connection = new(connectionString))
-            {
-                string command = $"select *from Users where IsActive=true and Id={id}";
-
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand(command, connection))
-                {
-                    User user = new();
-                    var member = cmd.ExecuteNonQuery();
-
-                    user.Id = int.Parse(member["Id"].ToString()!);
-                    user.Name = reader["Name"].ToString()!;
-                    user.PasswordHash = reader["PasswordHash"].ToString()!;
-                    user.CreatedAt = (DateTime)reader["CreatedAt"];
-                    user.UpdatedAt = (DateTime)reader["UpdatedAt"];
-
-                    return users;
-                }
-            }
+            throw new NotImplementedException();
         }
+
+        public void Update(User item)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public void Add(User user)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Delete(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public List<User> GetAll()
+        //{
+        //    using (SqlConnection connection = new(connectionString))
+        //    {
+        //        string command = "select *from Users where IsActive=true";
+
+        //        connection.Open();
+        //        using (SqlCommand cmd = new SqlCommand(command, connection))
+        //        {
+        //            SqlDataReader reader = cmd.ExecuteReader();
+
+        //            List<User> users = new List<User>();
+
+        //            while (reader.Read())
+        //            {
+        //                User user = new();
+
+        //                user.Id = int.Parse(reader["Id"].ToString()!);
+        //                user.Name = reader["Name"].ToString()!;
+        //                user.PasswordHash = reader["PasswordHash"].ToString()!;
+        //                user.CreatedAt = (DateTime)reader["CreatedAt"];
+        //                user.UpdatedAt = (DateTime)reader["UpdatedAt"];
+
+        //                users.Add(user);
+        //            }
+
+        //            return users;
+        //        }
+        //    }
+        //}
+
+        //public User GetById(int id)
+        //{
+        //    using (SqlConnection connection = new(connectionString))
+        //    {
+        //        string command = $"select *from Users where IsActive=true and Id={id}";
+
+        //        connection.Open();
+        //        using (SqlCommand cmd = new SqlCommand(command, connection))
+        //        {
+        //            User user = new();
+        //            var member = cmd.ExecuteNonQuery();
+
+        //            user.Id = int.Parse(member["Id"].ToString()!);
+        //            user.Name = reader["Name"].ToString()!;
+        //            user.PasswordHash = reader["PasswordHash"].ToString()!;
+        //            user.CreatedAt = (DateTime)reader["CreatedAt"];
+        //            user.UpdatedAt = (DateTime)reader["UpdatedAt"];
+
+        //            return users;
+        //        }
+        //    }
+        //}
     }
 }

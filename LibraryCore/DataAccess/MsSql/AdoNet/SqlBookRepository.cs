@@ -10,8 +10,7 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
         {
             this.connectionString = connectionString;
         }
-
-        public void Add(User user)
+        public int Add(Book item)
         {
             throw new NotImplementedException();
         }
@@ -21,12 +20,17 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
             throw new NotImplementedException();
         }
 
-        public List<User> GetAll()
+        public List<Book> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public User GetById(int id)
+        public Book GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Book item)
         {
             throw new NotImplementedException();
         }

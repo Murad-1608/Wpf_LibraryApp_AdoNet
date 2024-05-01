@@ -4,5 +4,6 @@
     {
         public IUserRepository UserRepository { get; }
         public IBookRepository BookRepository { get; }
+        public IGenreRepository GenreRepository { get; }
     }
 }

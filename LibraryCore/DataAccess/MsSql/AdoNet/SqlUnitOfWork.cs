@@ -17,5 +17,6 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
 
         public IUserRepository UserRepository => new SqlUserRepository(connectionString);
         public IBookRepository BookRepository => new SqlBookRepository(connectionString);
+        public IGenreRepository GenreRepository => new SqlGenreRepository(connectionString);
     }
 }
