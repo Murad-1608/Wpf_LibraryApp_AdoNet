@@ -101,7 +101,7 @@
 
         <Style TargetType="{x:Type ListView}" x:Key="listViewCustom">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
@@ -123,41 +123,32 @@
         <Style TargetType="{x:Type Grid}" x:Key="grdSearch">
             <Setter Property="IsEnabled" Value="True"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="{x:Type Grid}" x:Key="grdForm">
-            <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
 
+        
+
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WellDesignedButton}" x:Key="btnAdd">
             <Setter Property="Content" Value="Add"/>
-            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="Command" Value="{Binding Save}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="Content" Value="Save"/>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="Visibility" Value="Collapsed"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
             </Style.Triggers>
@@ -165,17 +156,29 @@
 
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WellDesignedButton}" x:Key="btnChange">
             <Setter Property="Content" Value="Edit"/>
-            <Setter Property="IsEnabled" Value="True"/>
-            <Setter Property="Command" Value="{Binding Save}"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Visibility" Value="Visible"/>
+            <Setter Property="Command" Value="{Binding Edit}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="IsEnabled" Value="False"/>
+                    <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="Content" Value="Save"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WellDesignedButton}" x:Key="btnSave">
+            <Setter Property="Content" Value="Save"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="Command" Value="{Binding Save}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                    <Setter Property="Visibility" Value="Visible"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -185,7 +188,7 @@
             <Setter Property="IsEnabled" Value="True"/>
             <Setter Property="Command" Value="{Binding Reject}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
             </Style.Triggers>
@@ -193,16 +196,22 @@
 
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WellDesignedButton}" x:Key="btnDelete">
             <Setter Property="Content" Value="Delete"/>
-            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="Command" Value="{Binding Delete}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Grid}" BasedOn="{StaticResource WellDesignedButton}" x:Key="grdForm">
+            <Setter Property="IsEnabled" Value="True"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
             </Style.Triggers>
