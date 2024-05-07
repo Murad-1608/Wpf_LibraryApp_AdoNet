@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Library.Views.Components
 {
     /// <summary>
-    /// Interaction logic for FormButtons.xaml
+    /// Interaction logic for ControlHeader.xaml
     /// </summary>
-    public partial class FormButtons : UserControl
+    public partial class ControlHeader : UserControl
     {
-        public FormButtons()
+        public ControlHeader()
         {
             InitializeComponent();
         }

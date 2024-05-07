@@ -3,16 +3,17 @@ using Library.ViewModels.Controls;
 
 namespace Library.Commands.Genre
 {
-    public class EditCommand : BaseCommand
+    public class DeleteCommand : BaseCommand
     {
         private readonly GenreViewModel viewModel;
-        public EditCommand(GenreViewModel viewModel)
+
+        public DeleteCommand(GenreViewModel viewModel)
         {
             this.viewModel = viewModel;
         }
         public override void Execute(object? parameter)
         {
-            viewModel.CurrentSituation = Situation.EDIT;
+            viewModel.CurrentSituation = Situation.NORMAL;
         }
     }
 }

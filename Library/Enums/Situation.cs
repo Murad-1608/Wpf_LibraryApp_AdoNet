@@ -1,6 +1,6 @@
 ﻿namespace Library.Enums
 {
-    public enum Stuation
+    public enum Situation
     {
         NORMAL,
         CREATE,

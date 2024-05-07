@@ -16,8 +16,8 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0">
-                <!--<components:ControlHeader/>
-                <components:ErrorDialog Height="0" x:Name="ErrorDialog"/>-->
+                <components:ControlHeader/>
+                <!--<components:ErrorDialog Height="0" x:Name="ErrorDialog"/>-->
 
                 <Grid Background="LightGray" >
                     <Grid.ColumnDefinitions>
@@ -35,23 +35,21 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0">
-                            <TextBlock Height="25" FontSize="15" Margin="5 5">Name</TextBlock>
-                            <TextBlock Height="25" FontSize="15" Margin="5 5">VOEN</TextBlock>
+                            <TextBlock Height="25" FontSize="15" Margin="5 20">Name</TextBlock>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
-                            <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.VOEN,Mode=TwoWay}"/>
+                            <TextBox FontSize="15" Height="25" Margin="5 20" Text="{Binding CurrentGenre.Name,Mode=TwoWay}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2">
-                            <TextBlock Height="25" FontSize="15" Margin="5 5">Correspondent Account</TextBlock>
-                            <TextBlock Height="25" FontSize="15" Margin="5 5">SWIFT</TextBlock>
+                            <TextBlock Height="25" FontSize="15" Margin="5 20">Note</TextBlock>
+                            
                         </StackPanel>
 
                         <StackPanel Grid.Column="3">
-                            <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.CorrespondentAccount,Mode=TwoWay}"/>
-                            <TextBox Height="25" FontSize="15" Margin="5 5"  Text="{Binding CurrentValue.SWIFT ,Mode=TwoWay}"/>
+                            <TextBox FontSize="15" Height="70" Margin="5 20" Text="{Binding CurrentGenre.Note,Mode=TwoWay}"/>
+                           
                         </StackPanel>
                     </Grid>
 

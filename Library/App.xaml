@@ -139,8 +139,8 @@
 
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WellDesignedButton}" x:Key="btnAdd">
             <Setter Property="Content" Value="Add"/>
-            <Setter Property="IsEnabled" Value="False"/>
-            <Setter Property="Command" Value="{Binding Save}"/>
+            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="Command" Value="{Binding Add}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -203,9 +203,9 @@
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
-        </Style>
+        </Style>      
 
-        <Style TargetType="{x:Type Grid}" BasedOn="{StaticResource WellDesignedButton}" x:Key="grdForm">
+        <Style TargetType="{x:Type Grid}" x:Key="grdForm">
             <Setter Property="IsEnabled" Value="True"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="0">

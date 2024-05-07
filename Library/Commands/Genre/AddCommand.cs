@@ -1,4 +1,5 @@
-﻿using Library.ViewModels.Controls;
+﻿using Library.Enums;
+using Library.ViewModels.Controls;
 
 namespace Library.Commands.Genre
 {
@@ -13,7 +14,7 @@ namespace Library.Commands.Genre
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            viewModel.CurrentSituation = Situation.CREATE;
         }
     }
 }

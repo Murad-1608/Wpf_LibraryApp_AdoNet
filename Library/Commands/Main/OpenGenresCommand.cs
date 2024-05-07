@@ -30,7 +30,7 @@ namespace Library.Commands.Main
             genresControl.DataContext = genreViewModel;
             var genres = unitOfWork.GenreRepository.GetAll();
 
-            var genreForUI = new List<GenreModel>();
+            var getGenresForUI = new List<GenreModel>();
 
             GenreMapper mapper = new GenreMapper();
 
@@ -39,10 +39,10 @@ namespace Library.Commands.Main
                 var genreModel = mapper.Map(genres[i]);
                 genreModel.No = (i + 1);
 
-                genreForUI.Add(genreModel);
+                getGenresForUI.Add(genreModel);
             }
 
-            genreViewModel.Genres = genreForUI;
+            genreViewModel.Genres = getGenresForUI;
 
             grid.Children.Clear();
             grid.Children.Add(genresControl);

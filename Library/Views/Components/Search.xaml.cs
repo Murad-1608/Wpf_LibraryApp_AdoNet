@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PaymentOrder.AdminPanel.Views.Components
+namespace Library.Views.Components
 {
     /// <summary>
     /// Interaction logic for Search.xaml
