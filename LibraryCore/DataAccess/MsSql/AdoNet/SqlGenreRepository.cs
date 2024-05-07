@@ -16,10 +16,17 @@ namespace LibraryCore.DataAccess.MsSql.AdoNet
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string command = $"Insert into Genres output inserted.Id values({item.ModifierId},{item.Name},{item.Note},{item.IsActive},{DateTime.Now},{DateTime.Now})";
-
+                string command = $"Insert into Genres(Name,Note,ModifierId,IsActive,CreatedAt,UpdatedAt) output inserted.Id values(@name,@note,@modifierId,@isActive,@createdAt,@updatedAt)";
+                connection.Open();
                 using (SqlCommand cmd = new SqlCommand(command, connection))
                 {
+                    cmd.Parameters.AddWithValue("@name",item.Name);
+                    cmd.Parameters.AddWithValue("@note",item.Note);
+                    cmd.Parameters.AddWithValue("@modifierId",item.ModifierId);
+                    cmd.Parameters.AddWithValue("@isActive",item.IsActive);
+                    cmd.Parameters.AddWithValue("@createdAt",item.CreatedAt);
+                    cmd.Parameters.AddWithValue("@updatedAt",item.UpdatedAt);
+
                     return (int)cmd.ExecuteScalar();
                 }
             }

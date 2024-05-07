@@ -2,12 +2,14 @@
 using Library.Enums;
 using Library.Models;
 using Library.ViewModels.Interfaces;
+using LibraryCore.Domain.Abstract;
+using System.Collections.ObjectModel;
 
 namespace Library.ViewModels.Controls
 {
-    public class GenreViewModel : BaseViewModel, IControlViewModel
+    public class GenreViewModel : BaseControlViewModel, IControlViewModel
     {
-        public GenreViewModel()
+        public GenreViewModel(IUnitOfWork unitOfWork):base(unitOfWork)
         {
             CurrentGenre = new GenreModel();
         }
@@ -26,7 +28,8 @@ namespace Library.ViewModels.Controls
                 OnPropertyChanged(nameof(CurrentSituation));
             }
         }
-        public List<GenreModel> Genres { get; set; }
+        public ObservableCollection<GenreModel> Genres { get; set; }
+
         private GenreModel currentGenre;
         public GenreModel CurrentGenre
         {

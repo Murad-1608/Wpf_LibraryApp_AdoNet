@@ -4,6 +4,7 @@ using Library.ViewModels.Controls;
 using Library.ViewModels.Windows;
 using Library.Views.Controls;
 using LibraryCore.Domain.Abstract;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -25,7 +26,7 @@ namespace Library.Commands.Main
                 return;
 
             GenresControl genresControl = new();
-            var genreViewModel = new GenreViewModel();
+            var genreViewModel = new GenreViewModel(unitOfWork);
 
             genresControl.DataContext = genreViewModel;
             var genres = unitOfWork.GenreRepository.GetAll();
@@ -42,7 +43,7 @@ namespace Library.Commands.Main
                 getGenresForUI.Add(genreModel);
             }
 
-            genreViewModel.Genres = getGenresForUI;
+            genreViewModel.Genres = new ObservableCollection<GenreModel>(getGenresForUI);
 
             grid.Children.Clear();
             grid.Children.Add(genresControl);

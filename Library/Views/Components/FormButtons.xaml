@@ -12,6 +12,7 @@
             <Button Style="{StaticResource btnChange}" Height="30" Margin="4 4"/>
             <Button Style="{StaticResource btnReject}" Height="30" Margin="4 4"/>
             <Button Style="{StaticResource btnDelete}" Height="30" Margin="4 4"/>
+            <Button Style="{StaticResource btnSave}" Height="30" Margin="4 4"/>
         </StackPanel>
     </Grid>
 </UserControl>
